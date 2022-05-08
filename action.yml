@@ -1,0 +1,16 @@
+name: 'Content-Queue Validate Tweet'
+description: 'Validates a tweet issue'
+inputs:
+  cardContent:
+    description: 'Parsed post metadata'
+    required: true
+  failOnValidationError:
+    description: 'Whether to fail the parse action if validation errors are detected'
+    default: 'true'
+    required: false
+outputs:
+  validationErrors:
+    description: 'Validation errors encountered while parsing the content'
+runs:
+  using: 'node16'
+  main: 'index.js'

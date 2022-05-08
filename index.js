@@ -1,7 +1,8 @@
 'use strict';
 
 const core = require('@actions/core'),
-    github = require('@actions/github');
+    github = require('@actions/github'),
+    twitter = require('twitter-text');
 
 if(!github.context.payload.issue && !/\/(?:issue|pull-request)s\/\d+$/.test(github.context.payload.project_card?.content_url)) {
     core.info('Not running on an event with an associated issue.');
